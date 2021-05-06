@@ -3,5 +3,6 @@
 -express
 -node
 -socket.io
--pear.js
+-peer.js
+-WebRTC(web Realtime Connunication)
 -UUID (for creating a unique id for the rooms)
