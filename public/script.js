@@ -1,4 +1,4 @@
-
+const socket=io('/');
 
 const videoGrid=document.getElementById('video-grid');
 const myVideo = document.createElement('video');
@@ -13,7 +13,6 @@ navigator.mediaDevices.getUserMedia({
     addVideoStream(myVideo, stream);
 });
 
-
 const addVideoStream = (video, stream) => {
     video.srcObject = stream;
     video.addEventListener('loadedmetadata',()=>{
@@ -22,3 +21,5 @@ const addVideoStream = (video, stream) => {
 
     videoGrid.append(video);
 }
+
+socket.emit('join-room');
