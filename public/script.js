@@ -47,6 +47,10 @@ navigator.mediaDevices.getUserMedia({
         $('.messages').append(`<li class="message"><b>User</b><br>${message}</li>`)
         scrollToBottom();
     })
+
+    socket.on('user-disconnected', userId => {
+        if (peers[userId]) peers[userId].close()
+      })
         
 });
 
@@ -62,6 +66,12 @@ function connectToNewUser(userId, stream) {
     call.on('stream', userVideoStream => {
       addVideoStream(video, userVideoStream)
     })
+
+    call.on('close', () => {
+        video.remove()
+      })
+    
+      peers[userId] = call
 }
 
 function addVideoStream(video, stream) {

@@ -38,12 +38,16 @@ video{
     align-items: center;
 }
 
+.title{
+    background-color: #242324;
+}
+
 .main__controls{
     display: flex;
     background-color: rgb(46, 44, 44);
     color: aliceblue;
     padding: 5px;
-    justify-content: space-between;
+    align-items: center;
 }
 .main__controls__button{
     display: flex;
@@ -57,7 +61,7 @@ video{
 .main__controls__block{
     display: flex;
 }
-.main__controls__buton i{
+.main__controls__button i{
     font-size: 24px;
 }
 
@@ -65,7 +69,7 @@ video{
     background-color:rgb(143, 135, 135) ;
 }
 
-.leave_meeting{
+.leave_meeting, .exit{
     color: rgb(207, 79, 79);
 }
 
