@@ -10,7 +10,7 @@ var peer = new Peer(undefined, {
 
 let myVideoStream;
 const myVideo = document.createElement('video');
-myVideo.muted=false;
+myVideo.muted=true;
 const peers = {}
 
 navigator.mediaDevices.getUserMedia({
