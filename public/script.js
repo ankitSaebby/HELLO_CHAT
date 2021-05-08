@@ -49,7 +49,8 @@ navigator.mediaDevices.getUserMedia({
     })
 
     socket.on('user-disconnected', userId => {
-        if (peers[userId]) peers[userId].close()
+        if (peers[userId])
+           peers[userId].close()
       })
         
 });
@@ -119,7 +120,7 @@ const setMuteButton = () => {
   // STOP VIDEO 
 
   const playStop = () => {
-    console.log('object')
+    //console.log('object')
     let enabled = myVideoStream.getVideoTracks()[0].enabled;
     if (enabled) {
       myVideoStream.getVideoTracks()[0].enabled = false;
@@ -144,4 +145,10 @@ const setMuteButton = () => {
       <span>Play Video</span>
     `
     document.querySelector('.main__video_button').innerHTML = html;
+  }
+
+  //leave meating
+
+  const leave = () =>{
+    socket.on('disconnect');
   }
